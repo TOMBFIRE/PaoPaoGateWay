@@ -1,4 +1,4 @@
-name: Build ISO and docker
+name: Build and Release ISO and docker
 
 on:
   workflow_dispatch:
@@ -41,3 +41,17 @@ jobs:
         push: true
         platforms: linux/amd64
         tags: tombfire/ppgwiso
+    - name: Upload files to GitHub release
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file_glob: true
+        file: ./iso/paopao-gateway*.7z
+        tag: ${{ env.TAG_NAME }}
+        body: ${{ env.RE_NOTE }}
+    - name: Remove old release
+      uses: dev-drprasad/delete-older-releases@v0.3.2
+      with:
+        keep_latest: 30
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
