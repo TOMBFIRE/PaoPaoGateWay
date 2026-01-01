@@ -754,7 +754,6 @@ if [ "$1" = "reload" ]; then
     exit
 fi
 
-sysctl -w net.ipv6.conf.all.disable_ipv6=1
 net_ready
 cat /etc/banner >/dev/tty0
 echo " " >/dev/tty0
