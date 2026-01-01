@@ -181,6 +181,12 @@ config interface 'eth0'
     option ipaddr '$ip'
     option netmask '$mask'
     option gateway '$gw'
+
+config interface 'ipv6'
+    option device 'eth0'
+    option proto 'dhcpv6'
+    option reqaddress 'try'
+    option reqprefix 'auto'
 EOF
     if [ -z "$dns1" ]; then
         if [ -n "$dns" ]; then
