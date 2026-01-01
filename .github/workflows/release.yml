@@ -40,7 +40,7 @@ jobs:
         context: "./iso"
         push: true
         platforms: linux/amd64
-        tags: sliamb/ppgwiso
+        tags: tombfire/ppgwiso
     - name: Upload files to GitHub release
       uses: svenstaro/upload-release-action@v2
       with:
