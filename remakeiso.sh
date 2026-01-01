@@ -205,7 +205,7 @@ EOF
     else
         echo "    option dns '$dns1'" >>$root"/etc/config/network"
     fi
-    if [ -z "$ra" ]; then
+    if [ -n "$ra" ]; then
         echo "net.ipv6.conf.eth0.accept_ra='$ra'" >>$root"/etc/sysctl.conf"
         exit
     fi
