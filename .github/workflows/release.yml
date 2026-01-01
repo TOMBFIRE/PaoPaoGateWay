@@ -1,4 +1,4 @@
-name: Build and Release ISO and docker
+name: Build ISO and docker
 
 on:
   workflow_dispatch:
