@@ -11,7 +11,7 @@ external-controller: 0.0.0.0:{clash_web_port}
 external-ui: /etc/config/clash/clash-dashboard
 secret: {clash_web_password}
 log-level: info
-ipv6: false
+ipv6: true
 profile:
   store-fake-ip: true
   store-selected: true
