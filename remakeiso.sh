@@ -207,7 +207,6 @@ EOF
     fi
     if [ -n "$ra" ]; then
         echo "net.ipv6.conf.eth0.accept_ra='$ra'" >>$root"/etc/sysctl.conf"
-        exit
     fi
 fi
 if [ -f /data/ppgwurl.ini ]; then
