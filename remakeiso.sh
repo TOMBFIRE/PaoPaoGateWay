@@ -175,6 +175,12 @@ config interface 'loopback'
     option ipaddr '127.0.0.1'
     option netmask '255.0.0.0'
 
+config interface 'ipv6'
+    option device 'eth0'
+    option proto 'dhcpv6'
+    option reqaddress 'try'
+    option reqprefix 'auto'
+
 config interface 'eth0'
     option device 'eth0'
     option proto 'static'
@@ -182,12 +188,8 @@ config interface 'eth0'
     option netmask '$mask'
     option gateway '$gw'
 
-config interface 'ipv6'
-    option device 'eth0'
-    option proto 'dhcpv6'
-    option reqaddress 'try'
-    option reqprefix 'auto'
 EOF
+    echo "net.ipv6.conf.eth0.accept_ra=2" >>$root"/etc/sysctl.conf"
     if [ -z "$dns1" ]; then
         if [ -n "$dns" ]; then
             dns1=$dns
