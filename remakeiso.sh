@@ -187,7 +187,6 @@ config interface 'eth0'
     option ipaddr '$ip'
     option netmask '$mask'
     option gateway '$gw'
-
 EOF
     echo "net.ipv6.conf.eth0.accept_ra=2" >>$root"/etc/sysctl.conf"
     if [ -z "$dns1" ]; then
