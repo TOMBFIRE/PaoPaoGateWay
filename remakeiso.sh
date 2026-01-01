@@ -206,7 +206,7 @@ EOF
         echo "    option dns '$dns1'" >>$root"/etc/config/network"
     fi
     if [ -n "$ra" ]; then
-        echo "net.ipv6.conf.eth0.accept_ra='$ra'" >>$root"/etc/sysctl.conf"
+        echo "net.ipv6.conf.eth0.accept_ra=$ra" >>$root"/etc/sysctl.conf"
     fi
 fi
 if [ -f /data/ppgwurl.ini ]; then
